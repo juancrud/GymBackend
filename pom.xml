@@ -6,10 +6,15 @@
 	<groupId>com.juancrud.gym</groupId>
 	<artifactId>Gym</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>Gym</name>
 	<description>Gym backend</description>
+	
+	<modules>
+        <module>GymApi</module>
+        <module>GymServices</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -47,6 +52,11 @@
 		    <groupId>org.postgresql</groupId>
 		    <artifactId>postgresql</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>com.juancrud.gym</groupId>
+            <artifactId>GymApi</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 	<build>
