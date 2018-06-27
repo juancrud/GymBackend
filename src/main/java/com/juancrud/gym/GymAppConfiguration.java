@@ -5,10 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.juancrud.gym.services.ExerciseService;
-
 @Configuration
-@ComponentScan("com.juancrud.gym.api, com.juancrud.gym.services")
+@ComponentScan("com.juancrud.gym.api")
 //@EnableJpaRepositories("com.juancrud.gym.repositories")
 //@EntityScan("com.juancrud.gym.dao")
 public class GymAppConfiguration {
