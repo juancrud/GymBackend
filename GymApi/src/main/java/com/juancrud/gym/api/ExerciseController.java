@@ -11,7 +11,7 @@ import com.juancrud.gym.services.IExerciseService;
 @RequestMapping("/exercises")
 public class ExerciseController {
 	
-	@Autowired
+	//@Autowired
     //private IExerciseService exerciseService;
 	
 	@GetMapping("/test")
