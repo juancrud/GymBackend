@@ -1,4 +1,4 @@
-package com.juancrud.gym.api;
+package com.juancrud.gym.api.controllers;
 
 import java.util.Collection;
 
@@ -38,13 +38,5 @@ public class ExerciseController {
 	@GetMapping("/testNew")
 	public Exercise testNew() {
 		return exerciseService.save(new Exercise("test name", "test description", null));
-	}
-	
-	
-	
-	@GetMapping("/test")
-	public String test() {
-		return exerciseService.test();
-//		return "Hello World from controller";
 	}
 }
