@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExerciseService implements IExerciseService {
 	public String test() {
-		return "Hello World test!";
+		return "Hello World from service!";
 	}
 }

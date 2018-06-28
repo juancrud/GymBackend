@@ -11,12 +11,12 @@ import com.juancrud.gym.services.IExerciseService;
 @RequestMapping("/exercises")
 public class ExerciseController {
 	
-	//@Autowired
-    //private IExerciseService exerciseService;
+	@Autowired
+    private IExerciseService exerciseService;
 	
 	@GetMapping("/test")
 	public String test() {
-//		return exerciseService.test();
-		return "Hello World from controller";
+		return exerciseService.test();
+//		return "Hello World from controller";
 	}
 }
