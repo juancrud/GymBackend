@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar GymApi/target/GymApi-0.0.1-SNAPSHOT.jar
