@@ -30,11 +30,4 @@ public class ExerciseService implements IExerciseService {
 	public Exercise save(Exercise exercise) {
 		return exerciseRepository.save(exercise);
 	}
-	
-	
-	
-	
-	public String test() {
-		return "Hello World from service!";
-	}
 }

@@ -8,7 +8,4 @@ public interface IExerciseService {
 	Collection<Exercise> getAll();
 	Exercise get(int id);
 	Exercise save(Exercise exercise);
-	
-	
-	String test();
 }
