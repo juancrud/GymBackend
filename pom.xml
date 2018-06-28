@@ -12,6 +12,8 @@
 	<description>Gym backend</description>
 	
 	<modules>
+		<module>GymDao</module>
+		<module>GymRepositories</module>
 		<module>GymServices</module>
 		<module>GymApi</module>
 	</modules>
