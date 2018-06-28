@@ -1,7 +1,9 @@
 package com.juancrud.gym.dao;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Exercise extends EntityWithId {
 	
 	@Column (name = "Name")
