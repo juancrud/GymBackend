@@ -1,7 +1,11 @@
 package com.juancrud.gym.dao;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ExerciseCategory extends EntityWithId {
@@ -9,10 +13,11 @@ public class ExerciseCategory extends EntityWithId {
 	@Column (name = "Name")
 	private String name;
 	
-	//private List<Exercise> exercises;
+	@OneToMany(mappedBy="exerciseCategory")
+	private Set<Exercise> exercises;
 	
 	public ExerciseCategory() {
-		//setExercises(new ArrayList<Exercise>());
+		setExercises(new HashSet<Exercise>());
 	}
 	
 	public ExerciseCategory(String name) {
@@ -28,11 +33,11 @@ public class ExerciseCategory extends EntityWithId {
 		this.name = name;
 	}
 
-//	public List<Exercise> getExercises() {
-//		return exercises;
-//	}
-//
-//	public void setExercises(List<Exercise> exercises) {
-//		this.exercises = exercises;
-//	}
+	public Set<Exercise> getExercises() {
+		return exercises;
+	}
+
+	public void setExercises(Set<Exercise> exercises) {
+		this.exercises = exercises;
+	}
 }

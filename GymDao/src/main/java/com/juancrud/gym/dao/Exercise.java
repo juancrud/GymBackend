@@ -2,6 +2,8 @@ package com.juancrud.gym.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Exercise extends EntityWithId {
@@ -12,17 +14,23 @@ public class Exercise extends EntityWithId {
 	@Column (name = "Description")
 	private String description;
 	
+	@ManyToOne
+    @JoinColumn(name="exerciseCategoryId", nullable=true)
+	private ExerciseCategory exerciseCategory;
 	
-	//private ExerciseCategory ExerciseCategory;
 	//private IList<ExerciseMedia> ExerciseMedias { get; set; }
 	
 	public Exercise() {
 	}
 	
-	public Exercise(String name, String description, ExerciseCategory exerciseCategory) {
+	public Exercise(String name, String description) {
 		setName(name);
 		setDescription(description);
-		//setExerciseCategory(exerciseCategory);
+	}
+	
+	public Exercise(String name, String description, ExerciseCategory exerciseCategory) {
+		this(name, description);
+		setExerciseCategory(exerciseCategory);
 	}
 	
 	public String getName() {
@@ -40,12 +48,12 @@ public class Exercise extends EntityWithId {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-//	public ExerciseCategory getExerciseCategory() {
-//		return ExerciseCategory;
-//	}
-//	
-//	public void setExerciseCategory(ExerciseCategory exerciseCategory) {
-//		ExerciseCategory = exerciseCategory;
-//	}
+
+	public ExerciseCategory getExerciseCategory() {
+		return exerciseCategory;
+	}
+
+	public void setExerciseCategory(ExerciseCategory exerciseCategory) {
+		this.exerciseCategory = exerciseCategory;
+	}
 }
