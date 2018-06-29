@@ -1,6 +1,7 @@
 package com.juancrud.gym.api.controllers;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.juancrud.gym.dao.GenderEnum;
+import com.juancrud.gym.dao.Person;
 import com.juancrud.gym.dao.Trainer;
 import com.juancrud.gym.dao.TrainerStatusEnum;
 import com.juancrud.gym.services.ITrainerService;
@@ -38,7 +41,8 @@ public class TrainerController {
 	
 	@GetMapping("/testNew")
 	public Trainer testNew() {
-		return trainerService.save(new Trainer(TrainerStatusEnum.Inactive));
+		Person person = new Person(112040765, "Gabriela Sanchez", GenderEnum.Female, new Date(1984, 4, 9), null, null, 0);
+		return trainerService.save(new Trainer(person, TrainerStatusEnum.Inactive));
 	}
 	
 }

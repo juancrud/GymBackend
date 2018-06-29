@@ -1,6 +1,7 @@
 package com.juancrud.gym.api.controllers;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.juancrud.gym.dao.Customer;
 import com.juancrud.gym.dao.CustomerStatusEnum;
+import com.juancrud.gym.dao.GenderEnum;
+import com.juancrud.gym.dao.Person;
 import com.juancrud.gym.services.ICustomerService;
 
 @RestController
@@ -38,7 +41,8 @@ public class CustomerController {
 	
 	@GetMapping("/testNew")
 	public Customer testNew() {
-		return customerService.save(new Customer(CustomerStatusEnum.Active));
+		Person person = new Person(901120925, "Juan Carlos Rudin", GenderEnum.Male, new Date(1984, 9, 26), null, null, 0);
+		return customerService.save(new Customer(person, CustomerStatusEnum.Active));
 	}
 	
 }
