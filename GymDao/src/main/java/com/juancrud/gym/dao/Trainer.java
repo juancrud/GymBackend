@@ -1,9 +1,13 @@
 package com.juancrud.gym.dao;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,7 +20,11 @@ public class Trainer extends EntityWithId {
 	@Column (name = "Status")
 	private TrainerStatusEnum status;
 	
+	@OneToMany(mappedBy="trainer")
+	private Set<MeasurementItem> measurementItems;
+	
 	public Trainer() {
+		measurementItems = new HashSet<MeasurementItem>();
 	}
 	
 	public Trainer(Person person, TrainerStatusEnum status) {
@@ -38,6 +46,16 @@ public class Trainer extends EntityWithId {
 
 	public void setStatus(TrainerStatusEnum status) {
 		this.status = status;
+	}
+	
+	public void addMeasurementItem(MeasurementItem measurementItem) {
+		measurementItems.add(measurementItem);
+		measurementItem.setTrainer(this);
+	}
+	
+	public void removeMeasurementItem(MeasurementItem measurementItem) {
+		measurementItems.remove(measurementItem);
+		measurementItem.setTrainer(null);
 	}
 
 }

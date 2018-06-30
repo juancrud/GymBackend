@@ -22,4 +22,17 @@ public abstract class EntityWithId {
 		this.id = id;
 	}
 	
+	/*TEST*/
+//	@Override
+//	public boolean equals(Object o) {
+//		if(this == o) return true;
+//		if(!(o instanceof MeasurementItemLine)) return false;
+//		return getId() != null && getId().equals(((MeasurementItemLine)o).getId());
+//	}
+//	
+//	@Override
+//	public int hashCode() {
+//		return 33;
+//	}
+	/*TEST*/
 }

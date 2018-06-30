@@ -42,7 +42,7 @@ public class CustomerController {
 	@GetMapping("/testNew")
 	public Customer testNew() {
 		Person person = new Person(901120925, "Juan Carlos Rudin", GenderEnum.Male, new Date(1984, 9, 26), null, null, 0);
-		return customerService.save(new Customer(person, CustomerStatusEnum.Active));
+		return customerService.save(new Customer(person, 172, CustomerStatusEnum.Active));
 	}
 	
 }
