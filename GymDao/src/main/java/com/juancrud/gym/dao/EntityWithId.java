@@ -1,5 +1,7 @@
 package com.juancrud.gym.dao;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,16 +25,19 @@ public abstract class EntityWithId {
 	}
 	
 	/*TEST*/
-//	@Override
-//	public boolean equals(Object o) {
-//		if(this == o) return true;
-//		if(!(o instanceof MeasurementItemLine)) return false;
-//		return getId() != null && getId().equals(((MeasurementItemLine)o).getId());
-//	}
-//	
-//	@Override
-//	public int hashCode() {
-//		return 33;
-//	}
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null) return false;
+		if (getClass() != o.getClass()) return false;
+		
+		EntityWithId otherObject = (EntityWithId)o;
+		return id != null && id.equals(otherObject.getId());
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(getClass(), id);
+	}
 	/*TEST*/
 }

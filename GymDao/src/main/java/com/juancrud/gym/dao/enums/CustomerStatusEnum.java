@@ -1,4 +1,4 @@
-package com.juancrud.gym.dao;
+package com.juancrud.gym.dao.enums;
 
 public enum CustomerStatusEnum {
 	Active,

@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.juancrud.gym.dao.enums.CustomerStatusEnum;
+
 @Entity
 public class Customer extends EntityWithId {
 	

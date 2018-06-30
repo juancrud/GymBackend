@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.juancrud.gym.dao.enums.GenderEnum;
+
 @Entity
 public class Person extends EntityWithId {
 
