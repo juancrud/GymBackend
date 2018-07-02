@@ -1,4 +1,4 @@
-package com.juancrud.gym.services;
+package com.juancrud.gym.services.interfaces;
 
 import com.juancrud.gym.dao.MeasurementItem;
 

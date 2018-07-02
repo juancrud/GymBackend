@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.juancrud.gym.dao.Exercise;
-import com.juancrud.gym.services.IExerciseService;
+import com.juancrud.gym.services.interfaces.IExerciseService;
 
 @RestController
 @RequestMapping("/exercises")

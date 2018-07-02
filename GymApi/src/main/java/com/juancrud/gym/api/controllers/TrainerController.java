@@ -15,7 +15,7 @@ import com.juancrud.gym.dao.Person;
 import com.juancrud.gym.dao.Trainer;
 import com.juancrud.gym.dao.enums.GenderEnum;
 import com.juancrud.gym.dao.enums.TrainerStatusEnum;
-import com.juancrud.gym.services.ITrainerService;
+import com.juancrud.gym.services.interfaces.ITrainerService;
 
 @RestController
 @RequestMapping("/trainers")

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.juancrud.gym.dao.Measurement;
-import com.juancrud.gym.services.IMeasurementService;
+import com.juancrud.gym.services.interfaces.IMeasurementService;
 
 @RestController
 @RequestMapping("/measurements")

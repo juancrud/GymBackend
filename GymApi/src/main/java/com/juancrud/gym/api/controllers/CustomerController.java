@@ -15,7 +15,7 @@ import com.juancrud.gym.dao.Customer;
 import com.juancrud.gym.dao.Person;
 import com.juancrud.gym.dao.enums.CustomerStatusEnum;
 import com.juancrud.gym.dao.enums.GenderEnum;
-import com.juancrud.gym.services.ICustomerService;
+import com.juancrud.gym.services.interfaces.ICustomerService;
 
 @RestController
 @RequestMapping("/customers")

@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.juancrud.gym.dao.Customer;
 import com.juancrud.gym.dao.MeasurementItem;
 import com.juancrud.gym.dao.Trainer;
-import com.juancrud.gym.services.ICustomerService;
-import com.juancrud.gym.services.IMeasurementItemService;
-import com.juancrud.gym.services.ITrainerService;
+import com.juancrud.gym.services.interfaces.ICustomerService;
+import com.juancrud.gym.services.interfaces.IMeasurementItemService;
+import com.juancrud.gym.services.interfaces.ITrainerService;
 
 @RestController
 @RequestMapping("/measurementItems")

@@ -6,7 +6,9 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
-public abstract class BaseService<E, ID, R extends CrudRepository<E, ID>> {
+import com.juancrud.gym.services.interfaces.IBaseService;
+
+public abstract class BaseService<E, ID, R extends CrudRepository<E, ID>> implements IBaseService<E, ID> {
 	
 	@Autowired
 	private R repository;
