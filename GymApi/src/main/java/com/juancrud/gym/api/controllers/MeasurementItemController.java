@@ -5,9 +5,6 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +17,7 @@ import com.juancrud.gym.services.interfaces.ITrainerService;
 
 @RestController
 @RequestMapping("/measurementItems")
-public class MeasurementItemController {
+public class MeasurementItemController extends BaseController<MeasurementItem, Integer, IMeasurementItemService> {
 
 	@Autowired
     private IMeasurementItemService measurementItemService;
@@ -30,21 +27,6 @@ public class MeasurementItemController {
 	
 	@Autowired
 	private ICustomerService customerService;
-	
-	@GetMapping("/")
-	public Collection<MeasurementItem> getAll() {
-		return measurementItemService.getAll();
-	}
-	
-	@GetMapping("/{id}")
-	public MeasurementItem get(@PathVariable int id) {
-		return measurementItemService.get(id);
-	}
-	
-	@PostMapping("/")
-	public MeasurementItem save(@RequestBody MeasurementItem exercise) {
-		return measurementItemService.save(exercise);
-	}
 	
 	@GetMapping("/testNew")
 	public MeasurementItem testNew() {
