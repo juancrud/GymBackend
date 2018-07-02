@@ -42,4 +42,10 @@ public abstract class BaseController<E, ID, S extends IBaseService<E, ID>> {
 		service.deleteById(id);
 		return entity;
 	}
+	
+	@GetMapping("/ping")
+	public String testPing() {
+		return "Test Ping.. ";
+	}
+	
 }
