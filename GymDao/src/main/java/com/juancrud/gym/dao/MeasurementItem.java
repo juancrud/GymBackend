@@ -48,7 +48,10 @@ public class MeasurementItem extends EntityWithId {
 	
 	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer, Routine routine, Collection<MeasurementItemLine> measurementItemLines) {
 		this(date, comments, trainer, customer, routine);
-		measurementItemLines.forEach(this::addMeasurementItemLine);
+		//measurementItemLines.forEach(this::addMeasurementItemLine);
+		for(MeasurementItemLine mil : measurementItemLines) {
+			this.addMeasurementItemLine(mil);
+		}
 	}
 
 	public Date getDate() {
