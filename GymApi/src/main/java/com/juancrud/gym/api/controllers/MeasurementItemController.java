@@ -42,6 +42,6 @@ public class MeasurementItemController extends BaseController<MeasurementItem, I
 			customer = c;
 		}
 		
-		return measurementItemService.save(new MeasurementItem(new Date(), "Test comment", trainer, customer));
+		return measurementItemService.save(new MeasurementItem(new Date(), "Test comment", trainer, customer, null));
 	}
 }

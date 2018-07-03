@@ -25,8 +25,12 @@ public class Trainer extends EntityWithId {
 	@OneToMany(mappedBy="trainer")
 	private Set<MeasurementItem> measurementItems;
 	
+	@OneToMany(mappedBy="trainer")
+	private Set<Routine> routines;
+	
 	public Trainer() {
 		measurementItems = new HashSet<MeasurementItem>();
+		routines = new HashSet<Routine>();
 	}
 	
 	public Trainer(Person person, TrainerStatusEnum status) {
@@ -58,6 +62,16 @@ public class Trainer extends EntityWithId {
 	public void removeMeasurementItem(MeasurementItem measurementItem) {
 		measurementItems.remove(measurementItem);
 		measurementItem.setTrainer(null);
+	}
+	
+	public void addRoutine(Routine routine) {
+		routines.add(routine);
+		routine.setTrainer(this);
+	}
+	
+	public void removeRoutine(Routine routine) {
+		routines.remove(routine);
+		routine.setTrainer(null);
 	}
 
 }

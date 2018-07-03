@@ -27,8 +27,12 @@ public class Customer extends EntityWithId {
 	@OneToMany(mappedBy="customer")
 	private Set<MeasurementItem> measurementItems;
 	
+	@OneToMany(mappedBy="customer")
+	private Set<Routine> routines;
+	
 	public Customer() {
 		measurementItems = new HashSet<MeasurementItem>();
+		routines = new HashSet<Routine>();
 	}
 	
 	public Customer(Person person, int height, CustomerStatusEnum status) {
@@ -69,5 +73,15 @@ public class Customer extends EntityWithId {
 	public void removeMeasurementItem(MeasurementItem measurementItem) {
 		measurementItems.remove(measurementItem);
 		measurementItem.setCustomer(null);
+	}
+	
+	public void addRoutine(Routine routine) {
+		routines.add(routine);
+		routine.setCustomer(this);
+	}
+	
+	public void removeRoutine(Routine routine) {
+		routines.remove(routine);
+		routine.setCustomer(null);
 	}
 }

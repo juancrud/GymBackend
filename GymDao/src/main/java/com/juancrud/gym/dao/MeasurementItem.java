@@ -1,5 +1,6 @@
 package com.juancrud.gym.dao;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class MeasurementItem extends EntityWithId {
@@ -19,36 +21,34 @@ public class MeasurementItem extends EntityWithId {
 	private String comments;
 	
 	@ManyToOne
-	@JoinColumn(name = "trainerId")
+	@JoinColumn(name = "TrainerId")
 	private Trainer trainer;
 	
 	@ManyToOne
-	@JoinColumn(name = "customerId")
+	@JoinColumn(name = "CustomerId")
 	private Customer customer;
 	
 	@OneToMany(mappedBy="measurementItem")
 	private Set<MeasurementItemLine> measurementItemLines;
 	
+	@OneToOne
+	@JoinColumn(name = "RoutineId")
+	private Routine routine;
+	
 	public MeasurementItem() {
 	}
 	
-	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer) {
+	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer, Routine routine) {
 		setDate(date);
 		setComments(comments);
 		setTrainer(trainer);
 		setCustomer(customer);
+		setRoutine(routine);
 	}
 	
-	@Override
-	public boolean equals(Object o) {
-		if(this == o) return true;
-		if(!(o instanceof MeasurementItem)) return false;
-		return getId() != null && getId().equals(((MeasurementItem)o).getId());
-	}
-	
-	@Override
-	public int hashCode() {
-		return 31;
+	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer, Routine routine, Collection<MeasurementItemLine> measurementItemLines) {
+		this(date, comments, trainer, customer, routine);
+		measurementItemLines.forEach(this::addMeasurementItemLine);
 	}
 
 	public Date getDate() {
@@ -83,6 +83,14 @@ public class MeasurementItem extends EntityWithId {
 		this.customer = customer;
 	}
 	
+	public Routine getRoutine() {
+		return routine;
+	}
+
+	public void setRoutine(Routine routine) {
+		this.routine = routine;
+	}
+	
 	public void addMeasurementItemLine(MeasurementItemLine measurementItemLine) {
 		measurementItemLines.add(measurementItemLine);
 		measurementItemLine.setMeasurementItem(this);
@@ -91,6 +99,18 @@ public class MeasurementItem extends EntityWithId {
 	public void removeMeasurementItemLine(MeasurementItemLine measurementItemLine) {
 		measurementItemLines.remove(measurementItemLine);
 		measurementItemLine.setMeasurementItem(null);
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) return true;
+		if(!(o instanceof MeasurementItem)) return false;
+		return getId() != null && getId().equals(((MeasurementItem)o).getId());
+	}
+	
+	@Override
+	public int hashCode() {
+		return 31;
 	}
 	
 }

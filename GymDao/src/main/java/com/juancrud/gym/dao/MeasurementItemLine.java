@@ -10,14 +10,14 @@ import javax.persistence.OneToOne;
 public class MeasurementItemLine extends EntityWithId {
 	
 	@OneToOne()
-	@JoinColumn(name = "measurementId")
+	@JoinColumn(name = "MeasurementId")
 	private Measurement measurement;
 	
 	@Column(name="Value")
 	private double value;
 	
 	@ManyToOne
-	@JoinColumn(name = "measurementItemId")
+	@JoinColumn(name = "MeasurementItemId")
 	private MeasurementItem measurementItem;
 	
 	public MeasurementItemLine() {
