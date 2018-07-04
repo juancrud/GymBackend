@@ -1,3 +1,6 @@
 TASKS:
 - Error handling
-
+- Add ViewModel classes
+- Add mapping logic
+- Add more controllers/services
+- Add Media
