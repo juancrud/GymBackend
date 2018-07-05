@@ -10,7 +10,7 @@ import com.juancrud.gym.services.interfaces.IMeasurementService;
 
 @RestController
 @RequestMapping("/measurements")
-public class MeasurementController extends BaseController<Measurement, Integer, IMeasurementService> {
+public class MeasurementController extends BaseController<Measurement, Integer> {
 
 	@Autowired
     private IMeasurementService measurementService;

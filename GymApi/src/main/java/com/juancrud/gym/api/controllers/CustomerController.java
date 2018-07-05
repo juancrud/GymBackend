@@ -15,7 +15,7 @@ import com.juancrud.gym.services.interfaces.ICustomerService;
 
 @RestController
 @RequestMapping("/customers")
-public class CustomerController extends BaseController<Customer, Integer, ICustomerService> {
+public class CustomerController extends BaseController<Customer, Integer> {
 
 	@Autowired
     private ICustomerService customerService;

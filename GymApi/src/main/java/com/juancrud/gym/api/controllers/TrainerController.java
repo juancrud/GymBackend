@@ -15,7 +15,7 @@ import com.juancrud.gym.services.interfaces.ITrainerService;
 
 @RestController
 @RequestMapping("/trainers")
-public class TrainerController extends BaseController<Trainer, Integer, ITrainerService> {
+public class TrainerController extends BaseController<Trainer, Integer> {
 
 	@Autowired
     private ITrainerService trainerService;

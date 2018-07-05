@@ -14,7 +14,7 @@ import com.juancrud.gym.services.interfaces.IExerciseService;
 
 @RestController
 @RequestMapping("/exercises")
-public class ExerciseController extends BaseController<Exercise, Integer, IExerciseService> {
+public class ExerciseController extends BaseController<Exercise, Integer> {
 	
 	@Autowired
     private IExerciseService exerciseService;

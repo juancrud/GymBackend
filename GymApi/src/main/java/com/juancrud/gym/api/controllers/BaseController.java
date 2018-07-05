@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.juancrud.gym.services.interfaces.IBaseService;
 
-public abstract class BaseController<E, ID, S extends IBaseService<E, ID>> {
+public abstract class BaseController<E, ID> {
 	
 	@Autowired
-    private S service;
+    private IBaseService<E, ID> service;
 	
 	@GetMapping("/")
 	public Collection<E> getAll() {

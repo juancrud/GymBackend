@@ -17,7 +17,7 @@ import com.juancrud.gym.services.interfaces.ITrainerService;
 
 @RestController
 @RequestMapping("/measurementItems")
-public class MeasurementItemController extends BaseController<MeasurementItem, Integer, IMeasurementItemService> {
+public class MeasurementItemController extends BaseController<MeasurementItem, Integer> {
 
 	@Autowired
     private IMeasurementItemService measurementItemService;

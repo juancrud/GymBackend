@@ -10,7 +10,7 @@ import com.juancrud.gym.services.interfaces.IExerciseCategoryService;
 
 @RestController
 @RequestMapping("/exerciseCategories")
-public class ExerciseCategoryController extends BaseController<ExerciseCategory, Integer, IExerciseCategoryService> {
+public class ExerciseCategoryController extends BaseController<ExerciseCategory, Integer> {
 
 	@Autowired
     private IExerciseCategoryService exerciseCategoryService;
