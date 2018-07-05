@@ -8,10 +8,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.juancrud.gym.services.interfaces.IBaseService;
 
-public abstract class BaseService<E, ID, R extends CrudRepository<E, ID>> implements IBaseService<E, ID> {
+public abstract class BaseService<E, ID> implements IBaseService<E, ID> {
 	
 	@Autowired
-	private R repository;
+	private CrudRepository<E, ID> repository;
 	
 	public Collection<E> getAll() {
 		Iterable<E> iterable = repository.findAll();
