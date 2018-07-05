@@ -2,11 +2,11 @@ package com.juancrud.gym.services.interfaces;
 
 import java.util.Collection;
 
-public interface IBaseService<E, ID> {
-	Collection<E> getAll();
-	E get(ID id);
+public interface IBaseService<M, ID> {
+	Collection<M> getAll();
+	M get(ID id);
 	long count();
-	E save(E entity);
-	boolean delete(E entity);
+	M save(M entity);
+	boolean delete(M entity);
 	boolean deleteById(ID id);
 }

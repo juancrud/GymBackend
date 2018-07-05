@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juancrud.gym.dao.Customer;
-import com.juancrud.gym.dao.MeasurementItem;
-import com.juancrud.gym.dao.Trainer;
 import com.juancrud.gym.services.interfaces.ICustomerService;
 import com.juancrud.gym.services.interfaces.IMeasurementItemService;
 import com.juancrud.gym.services.interfaces.ITrainerService;
+import com.juancrud.gym.services.models.CustomerModel;
+import com.juancrud.gym.services.models.MeasurementItemModel;
+import com.juancrud.gym.services.models.TrainerModel;
 
 @RestController
 @RequestMapping("/measurementItems")
-public class MeasurementItemController extends BaseController<MeasurementItem, Integer> {
+public class MeasurementItemController extends BaseController<MeasurementItemModel, Integer> {
 
 	@Autowired
     private IMeasurementItemService measurementItemService;
@@ -29,19 +29,19 @@ public class MeasurementItemController extends BaseController<MeasurementItem, I
 	private ICustomerService customerService;
 	
 	@GetMapping("/testNew")
-	public MeasurementItem testNew() {
-		Collection<Trainer> trainers = trainerService.getAll();
-		Trainer trainer = null;
-		for(Trainer t : trainers) {
-			trainer = t;
+	public MeasurementItemModel testNew() {
+		Collection<TrainerModel> trainerModels = trainerService.getAll();
+		TrainerModel trainerModel = null;
+		for(TrainerModel tm : trainerModels) {
+			trainerModel = tm;
 		}
 		
-		Collection<Customer> customers = customerService.getAll();
-		Customer customer = null;
-		for(Customer c : customers) {
-			customer = c;
+		Collection<CustomerModel> customerModels = customerService.getAll();
+		CustomerModel customerModel = null;
+		for(CustomerModel cm : customerModels) {
+			customerModel = cm;
 		}
 		
-		return measurementItemService.save(new MeasurementItem(new Date(), "Test comment", trainer, customer, null));
+		return measurementItemService.save(new MeasurementItemModel(null, new Date(), "Test comment", trainerModel, customerModel));
 	}
 }

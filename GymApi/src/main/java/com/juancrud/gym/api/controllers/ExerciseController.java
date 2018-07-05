@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juancrud.gym.dao.Exercise;
-import com.juancrud.gym.dao.ExerciseCategory;
 import com.juancrud.gym.services.interfaces.IExerciseCategoryService;
 import com.juancrud.gym.services.interfaces.IExerciseService;
+import com.juancrud.gym.services.models.ExerciseCategoryModel;
+import com.juancrud.gym.services.models.ExerciseModel;
 
 @RestController
 @RequestMapping("/exercises")
-public class ExerciseController extends BaseController<Exercise, Integer> {
+public class ExerciseController extends BaseController<ExerciseModel, Integer> {
 	
 	@Autowired
     private IExerciseService exerciseService;
@@ -23,13 +23,13 @@ public class ExerciseController extends BaseController<Exercise, Integer> {
 	private IExerciseCategoryService exerciseCategoryService;
 	
 	@GetMapping("/testNew")
-	public Exercise testNew() {
-		Collection<ExerciseCategory> exerciseCategories = exerciseCategoryService.getAll();
-		ExerciseCategory exerciseCategory = null;
-		for(ExerciseCategory ec : exerciseCategories) {
-			exerciseCategory = ec;
+	public ExerciseModel testNew() {
+		Collection<ExerciseCategoryModel> exerciseCategoryModels = exerciseCategoryService.getAll();
+		ExerciseCategoryModel exerciseCategoryModel = null;
+		for(ExerciseCategoryModel ecm : exerciseCategoryModels) {
+			exerciseCategoryModel = ecm;
 		}
 		
-		return exerciseService.save(new Exercise("test name", "test description", exerciseCategory));
+		return exerciseService.save(new ExerciseModel(null, "test name", "test description", exerciseCategoryModel));
 	}
 }

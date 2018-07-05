@@ -1,6 +1,6 @@
 package com.juancrud.gym.services.interfaces;
 
-import com.juancrud.gym.dao.MeasurementItem;
+import com.juancrud.gym.services.models.MeasurementItemModel;
 
-public interface IMeasurementItemService extends IBaseService<MeasurementItem, Integer> {
+public interface IMeasurementItemService extends IBaseService<MeasurementItemModel, Integer> {
 }

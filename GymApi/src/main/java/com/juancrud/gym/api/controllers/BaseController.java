@@ -11,36 +11,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.juancrud.gym.services.interfaces.IBaseService;
 
-public abstract class BaseController<E, ID> {
+public abstract class BaseController<M, ID> {
 	
 	@Autowired
-    private IBaseService<E, ID> service;
+    private IBaseService<M, ID> service;
 	
 	@GetMapping("/")
-	public Collection<E> getAll() {
+	public Collection<M> getAll() {
 		return service.getAll();
 	}
 	
 	@GetMapping("/{id}")
-	public E get(@PathVariable ID id) {
+	public M get(@PathVariable ID id) {
 		return service.get(id);
 	}
 	
 	@PostMapping("/")
-	public E add(@RequestBody E entity) {
-		return service.save(entity);
+	public M add(@RequestBody M model) {
+		return service.save(model);
 	}
 	
 	@PutMapping("/")
-	public E update(@RequestBody E entity) {
-		return service.save(entity);
+	public M update(@RequestBody M model) {
+		return service.save(model);
 	}
 	
 	@DeleteMapping("/{id}")
-	public E remove(@PathVariable ID id) {
-		E entity = service.get(id);
+	public M remove(@PathVariable ID id) {
+		M model = service.get(id);
 		service.deleteById(id);
-		return entity;
+		return model;
 	}
 	
 	@GetMapping("/ping")

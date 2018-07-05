@@ -1,6 +1,6 @@
 package com.juancrud.gym.services.interfaces;
 
-import com.juancrud.gym.dao.Trainer;
+import com.juancrud.gym.services.models.TrainerModel;
 
-public interface ITrainerService extends IBaseService<Trainer, Integer> {
+public interface ITrainerService extends IBaseService<TrainerModel, Integer> {
 }

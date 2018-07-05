@@ -1,6 +1,6 @@
 package com.juancrud.gym.services.interfaces;
 
-import com.juancrud.gym.dao.ExerciseCategory;
+import com.juancrud.gym.services.models.ExerciseCategoryModel;
 
-public interface IExerciseCategoryService extends IBaseService<ExerciseCategory, Integer> {
+public interface IExerciseCategoryService extends IBaseService<ExerciseCategoryModel, Integer> {
 }

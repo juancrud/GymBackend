@@ -1,6 +1,6 @@
 package com.juancrud.gym.services.interfaces;
 
-import com.juancrud.gym.dao.Customer;
+import com.juancrud.gym.services.models.CustomerModel;
 
-public interface ICustomerService extends IBaseService<Customer, Integer> {
+public interface ICustomerService extends IBaseService<CustomerModel, Integer> {
 }

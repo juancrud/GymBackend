@@ -2,11 +2,11 @@ package com.juancrud.gym.services.models;
 
 import java.util.Date;
 
+import com.juancrud.gym.dao.enums.CustomerStatusEnum;
 import com.juancrud.gym.dao.enums.GenderEnum;
-import com.juancrud.gym.dao.enums.TrainerStatusEnum;
 
-public class TrainerModel {
-
+public class CustomerModel {
+	
 	private Integer id;
 	private int documentId;
 	private String name;
@@ -15,27 +15,29 @@ public class TrainerModel {
 	private String address;
 	private String emailAddress;
 	private int phoneNumber;
-	private TrainerStatusEnum status;
+	private int height;
+	private CustomerStatusEnum status;
 	
-	public TrainerModel() {
+	public CustomerModel() {
 	}
 	
-	public TrainerModel(Integer id, int documentId, String name, GenderEnum gender, Date birthDay, String address, String emailAddress, int phoneNumber, TrainerStatusEnum status) {
+	public CustomerModel(Integer id, int documentId, String name, GenderEnum gender, Date birthDay, String address, String emailAddress, int phoneNumber, int height, CustomerStatusEnum status) {
 		setId(id);
 		setDocumentId(documentId);
 		setName(name);
 		setGender(gender);
 		setBirthDay(birthDay);
-		setAddress(address);
+		setAddress(emailAddress);
 		setEmailAddress(emailAddress);
 		setPhoneNumber(phoneNumber);
+		setHeight(height);
 		setStatus(status);
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
-
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -96,11 +98,20 @@ public class TrainerModel {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public TrainerStatusEnum getStatus() {
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public CustomerStatusEnum getStatus() {
 		return status;
 	}
 
-	public void setStatus(TrainerStatusEnum status) {
+	public void setStatus(CustomerStatusEnum status) {
 		this.status = status;
 	}
+
 }

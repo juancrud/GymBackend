@@ -5,18 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juancrud.gym.dao.Measurement;
 import com.juancrud.gym.services.interfaces.IMeasurementService;
+import com.juancrud.gym.services.models.MeasurementModel;
 
 @RestController
 @RequestMapping("/measurements")
-public class MeasurementController extends BaseController<Measurement, Integer> {
+public class MeasurementController extends BaseController<MeasurementModel, Integer> {
 
 	@Autowired
     private IMeasurementService measurementService;
 	
 	@GetMapping("/testNew")
-	public Measurement testNew() {
-		return measurementService.save(new Measurement("Test Name", "Test description"));
+	public MeasurementModel testNew() {
+		return measurementService.save(new MeasurementModel(null, "Test Name", "Test description"));
 	}
 }

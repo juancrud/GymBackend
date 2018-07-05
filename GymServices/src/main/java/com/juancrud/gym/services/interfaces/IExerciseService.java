@@ -1,6 +1,6 @@
 package com.juancrud.gym.services.interfaces;
 
-import com.juancrud.gym.dao.Exercise;
+import com.juancrud.gym.services.models.ExerciseModel;
 
-public interface IExerciseService extends IBaseService<Exercise, Integer> {
+public interface IExerciseService extends IBaseService<ExerciseModel, Integer> {
 }

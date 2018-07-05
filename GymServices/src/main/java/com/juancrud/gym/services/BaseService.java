@@ -7,33 +7,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
 import com.juancrud.gym.services.interfaces.IBaseService;
+import com.juancrud.gym.services.mappers.IModelEntityMapper;
 
-public abstract class BaseService<E, ID> implements IBaseService<E, ID> {
+public abstract class BaseService<M, E, ID> implements IBaseService<M, ID> {
 	
 	@Autowired
 	private CrudRepository<E, ID> repository;
 	
-	public Collection<E> getAll() {
+	@Autowired
+	private IModelEntityMapper<M, E> mapper;
+	
+	public Collection<M> getAll() {
 		Iterable<E> iterable = repository.findAll();
 		
-		Collection<E> result = new ArrayList<E>();
-		iterable.forEach(result::add);
+		Collection<M> result = new ArrayList<M>();
+		iterable.forEach(x -> result.add(mapper.mapEntityToModel(x)));
 		return result;
 	}
 	
-	public E get(ID id) {
-		return repository.findById(id).get();
+	public M get(ID id) {
+		E entity = repository.findById(id).get();
+		return mapper.mapEntityToModel(entity);
 	}
 	
 	public long count() {
 		return repository.count();
 	}
 	
-	public E save(E entity) {
-		return repository.save(entity);
+	public M save(M model) {
+		E entity = mapper.mapModelToEntity(model);
+		repository.save(entity);
+		return mapper.mapEntityToModel(entity);
 	}
 	
-	public boolean delete(E entity) {
+	public boolean delete(M model) {
+		E entity = mapper.mapModelToEntity(model);
 		repository.delete(entity);
 		return true;
 	}

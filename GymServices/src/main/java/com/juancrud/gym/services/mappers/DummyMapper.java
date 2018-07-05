@@ -9,7 +9,12 @@ import com.juancrud.gym.services.models.DummyModel;
 public class DummyMapper implements IModelEntityMapper<DummyModel, Dummy> {
 
 	public DummyModel mapEntityToModel(Dummy dummy) {
-		return new DummyModel(dummy.getId(), dummy.getName(), dummy.getDescription());
+		DummyModel dummyModel = new DummyModel();
+		dummyModel.setId(dummy.getId());
+		dummyModel.setName(dummy.getName());
+		dummyModel.setDescription(dummy.getDescription());
+		
+		return dummyModel;
 	}
 	
 	public Dummy mapModelToEntity(DummyModel dummyModel) {
