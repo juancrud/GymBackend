@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.juancrud.gym.dao.Dummy;
 import com.juancrud.gym.repositories.DummyRepository;
 import com.juancrud.gym.services.interfaces.IDummyService;
-import com.juancrud.gym.services.mappers.DummyMapper;
+import com.juancrud.gym.services.mappers.IModelEntityMapper;
 import com.juancrud.gym.services.models.DummyModel;
 
 @Service
@@ -18,19 +18,20 @@ public class DummyService implements IDummyService {
 	@Autowired
 	private DummyRepository dummyRepository;
 	
-	private DummyMapper dummyMapper = new DummyMapper();
+	@Autowired
+	private IModelEntityMapper<DummyModel, Dummy> dummyMapper;
 	
 	public Collection<DummyModel> getAll() {
 		Iterable<Dummy> iterable = dummyRepository.findAll();
 		
 		Collection<DummyModel> result = new ArrayList<DummyModel>();
-		iterable.forEach(x -> result.add(dummyMapper.mapDaoToModel(x)));
+		iterable.forEach(x -> result.add(dummyMapper.mapEntityToModel(x)));
 		return result;
 	}
 
 	public DummyModel get(Integer id) {
 		Dummy dummy = dummyRepository.findById(id).get();
-		return dummyMapper.mapDaoToModel(dummy);
+		return dummyMapper.mapEntityToModel(dummy);
 	}
 
 	public long count() {
@@ -38,13 +39,13 @@ public class DummyService implements IDummyService {
 	}
 
 	public DummyModel save(DummyModel dummyModel) {
-		Dummy dummy = dummyMapper.mapModelToDao(dummyModel);
+		Dummy dummy = dummyMapper.mapModelToEntity(dummyModel);
 		dummyRepository.save(dummy);
-		return dummyMapper.mapDaoToModel(dummy);
+		return dummyMapper.mapEntityToModel(dummy);
 	}
 
 	public boolean delete(DummyModel dummyModel) {
-		Dummy dummy = dummyMapper.mapModelToDao(dummyModel);
+		Dummy dummy = dummyMapper.mapModelToEntity(dummyModel);
 		dummyRepository.delete(dummy);
 		return true;
 	}
