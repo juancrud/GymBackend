@@ -19,6 +19,7 @@ public class Customer extends EntityWithId {
 	@JoinColumn(name = "personId")
 	private Person person;
 	
+	@Column (name = "Height")
 	private int height;
 
 	@Column (name = "Status")
