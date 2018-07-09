@@ -1,6 +1,7 @@
 TASKS:
 - Error handling
-- Add ViewModel classes
-- Add mapping logic
-- Add more controllers/services
-- Add Media
+- Add more logic to Controllers (search?q=xxx)
+- Link Media to existing data
+- Add Auditable daos
+- Add more Daos, Model, Controllers ?
+- Add some Automapper ???
