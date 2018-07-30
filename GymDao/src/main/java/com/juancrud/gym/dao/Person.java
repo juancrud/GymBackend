@@ -1,6 +1,6 @@
 package com.juancrud.gym.dao;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ public class Person extends EntityWithId {
 	private GenderEnum gender;
 	
 	@Column (name = "BirthDay")
-	private Date birthDay;
+	private Timestamp birthDay;
 	
 //	@Column (name = "Image")
 //	private Object Image;
@@ -37,7 +37,7 @@ public class Person extends EntityWithId {
 	public Person() {
 	}
 	
-	public Person(int documentId, String name, GenderEnum gender, Date birthDay, String address, String emailAddress, int phoneNumber) {
+	public Person(int documentId, String name, GenderEnum gender, Timestamp birthDay, String address, String emailAddress, int phoneNumber) {
 		setDocumentId(documentId);
 		setName(name);
 		setGender(gender);
@@ -71,11 +71,11 @@ public class Person extends EntityWithId {
 		this.gender = gender;
 	}
 
-	public Date getBirthDay() {
+	public Timestamp getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(Date birthDay) {
+	public void setBirthDay(Timestamp birthDay) {
 		this.birthDay = birthDay;
 	}
 

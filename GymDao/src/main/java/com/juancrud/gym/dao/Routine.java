@@ -1,7 +1,6 @@
 package com.juancrud.gym.dao;
 
-import java.util.Date;
-
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,7 +11,7 @@ import javax.persistence.OneToOne;
 public class Routine extends EntityWithId {
 
 	@Column(name="Date")
-	private Date date;
+	private Timestamp date;
 	
 	@Column(name="Objectives")
 	private String objectives;
@@ -31,7 +30,7 @@ public class Routine extends EntityWithId {
 	@OneToOne(mappedBy="routine")
 	private MeasurementItem measurementItem;
 	
-	public Routine(Date date, String objectives, String comments, Trainer trainer, Customer customer, MeasurementItem measurementItem) {
+	public Routine(Timestamp date, String objectives, String comments, Trainer trainer, Customer customer, MeasurementItem measurementItem) {
 		setDate(date);
 		setObjectives(objectives);
 		setComments(comments);
@@ -44,11 +43,11 @@ public class Routine extends EntityWithId {
 		
 	}
 	
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 	

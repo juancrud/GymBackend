@@ -1,7 +1,7 @@
 package com.juancrud.gym.dao;
 
+import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 public class MeasurementItem extends EntityWithId {
 
 	@Column(name="Date")
-	private Date date;
+	private Timestamp date;
 	
 	@Column(name="Comments")
 	private String comments;
@@ -38,7 +38,7 @@ public class MeasurementItem extends EntityWithId {
 	public MeasurementItem() {
 	}
 	
-	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer, Routine routine) {
+	public MeasurementItem(Timestamp date, String comments, Trainer trainer, Customer customer, Routine routine) {
 		setDate(date);
 		setComments(comments);
 		setTrainer(trainer);
@@ -46,7 +46,7 @@ public class MeasurementItem extends EntityWithId {
 		setRoutine(routine);
 	}
 	
-	public MeasurementItem(Date date, String comments, Trainer trainer, Customer customer, Routine routine, Collection<MeasurementItemLine> measurementItemLines) {
+	public MeasurementItem(Timestamp date, String comments, Trainer trainer, Customer customer, Routine routine, Collection<MeasurementItemLine> measurementItemLines) {
 		this(date, comments, trainer, customer, routine);
 		//measurementItemLines.forEach(this::addMeasurementItemLine);
 		for(MeasurementItemLine mil : measurementItemLines) {
@@ -54,11 +54,11 @@ public class MeasurementItem extends EntityWithId {
 		}
 	}
 
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 
