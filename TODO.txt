@@ -1,7 +1,7 @@
 TASKS:
-- Error handling
 - Add more logic to Controllers (search?q=xxx)
+- Normalize Dates (UTC), Dates on Models
+- Revisit column types, Table indexes/constraints
 - Link Media to existing data
-- Add Auditable daos
 - Add more Daos, Model, Controllers ?
 - Add some Automapper ???
