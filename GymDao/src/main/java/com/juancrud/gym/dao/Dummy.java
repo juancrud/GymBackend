@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-public class Dummy extends EntityWithId {
+public class Dummy extends AuditableEntityWithId {
 
 	@Column (name = "Name")
 	private String name;
