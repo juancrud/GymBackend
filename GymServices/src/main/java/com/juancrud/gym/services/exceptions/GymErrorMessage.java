@@ -5,14 +5,14 @@ import java.util.Date;
 public class GymErrorMessage {
 	
 	private Date timestamp;
+	private String request;
 	private String message;
-	private String details;
 	private String stacktrace;
 	
-	public GymErrorMessage(Date timestamp, String message, String details, String stacktrace) {
+	public GymErrorMessage(Date timestamp, String request, String message, String stacktrace) {
 		setTimestamp(timestamp);
+		setRequest(request);
 		setMessage(message);
-		setDetails(details);
 		setStacktrace(stacktrace);
 	}
 
@@ -23,6 +23,14 @@ public class GymErrorMessage {
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
 	}
+	
+	public String getRequest() {
+		return request;
+	}
+
+	public void setRequest(String request) {
+		this.request = request;
+	}
 
 	public String getMessage() {
 		return message;
@@ -30,14 +38,6 @@ public class GymErrorMessage {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getDetails() {
-		return details;
-	}
-
-	public void setDetails(String details) {
-		this.details = details;
 	}
 
 	public String getStacktrace() {

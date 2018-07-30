@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.juancrud.gym.api.exceptions.ExceptionUtil;
 import com.juancrud.gym.services.exceptions.GymErrorMessage;
-import com.juancrud.gym.services.exceptions.GymServiceException;
 import com.juancrud.gym.services.interfaces.IBaseService;
 import com.juancrud.gym.services.models.EntityModel;
 
 @ControllerAdvice
-public abstract class BaseController<M extends EntityModel<ID>, ID> extends ResponseEntityExceptionHandler{
+public abstract class BaseController<M extends EntityModel<ID>, ID> extends ResponseEntityExceptionHandler {
 	
 	@Autowired
     private IBaseService<M, ID> service;
@@ -65,10 +65,9 @@ public abstract class BaseController<M extends EntityModel<ID>, ID> extends Resp
 		return "Test Ping.. ";
 	}
 	
-	@ExceptionHandler(GymServiceException.class)
-	public GymErrorMessage handleGymServiceException(GymServiceException ex, WebRequest request) {
-		GymErrorMessage errorMessage = new GymErrorMessage(new Date(), ex.getMessage(), request.getDescription(false), "");
-		return errorMessage;
+	@ExceptionHandler(Exception.class)
+	public GymErrorMessage handleGymServiceException(Exception ex, WebRequest request) {
+		return new GymErrorMessage(new Date(), request.getDescription(false), ex.getMessage(), ExceptionUtil.getStackTrace(ex));
 	}
 	
 }
