@@ -2,9 +2,8 @@ package com.juancrud.gym.services.models;
 
 import com.juancrud.gym.dao.enums.MediaTypeEnum;
 
-public class MediaModel {
+public class MediaModel extends EntityModel<Integer> {
 
-	private Integer id;
 	private String url;
 	private MediaTypeEnum type;
 	
@@ -15,14 +14,6 @@ public class MediaModel {
 		setId(id);
 		setUrl(url);
 		setType(type);
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getUrl() {

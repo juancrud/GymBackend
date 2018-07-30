@@ -1,11 +1,10 @@
 package com.juancrud.gym.services.models;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
-public class MeasurementItemModel {
+public class MeasurementItemModel extends EntityModel<Integer> {
 
-	private Integer id;
-	private Date date;
+	private Timestamp date;
 	private String comments;
 	private TrainerModel trainer;
 	private CustomerModel customer;
@@ -13,7 +12,7 @@ public class MeasurementItemModel {
 	public MeasurementItemModel() {
 	}
 	
-	public MeasurementItemModel(Integer id, Date date, String comments, TrainerModel trainer, CustomerModel customer) {
+	public MeasurementItemModel(Integer id, Timestamp date, String comments, TrainerModel trainer, CustomerModel customer) {
 		setId(id);
 		setDate(date);
 		setComments(comments);
@@ -21,19 +20,11 @@ public class MeasurementItemModel {
 		setCustomer(customer);
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 

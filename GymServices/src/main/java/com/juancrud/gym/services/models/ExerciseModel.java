@@ -1,8 +1,7 @@
 package com.juancrud.gym.services.models;
 
-public class ExerciseModel {
+public class ExerciseModel extends EntityModel<Integer> {
 	
-	private Integer id;
 	private String name;
 	private String description;
 	private ExerciseCategoryModel exerciseCategory;
@@ -15,14 +14,6 @@ public class ExerciseModel {
 		setName(name);
 		setDescription(description);
 		setExerciseCategory(exerciseCategory);
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {

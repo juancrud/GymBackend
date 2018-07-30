@@ -1,17 +1,15 @@
 package com.juancrud.gym.services.models;
 
-import java.util.Date;
-
+import java.sql.Timestamp;
 import com.juancrud.gym.dao.enums.CustomerStatusEnum;
 import com.juancrud.gym.dao.enums.GenderEnum;
 
-public class CustomerModel {
+public class CustomerModel extends EntityModel<Integer> {
 	
-	private Integer id;
 	private int documentId;
 	private String name;
 	private GenderEnum gender;
-	private Date birthDay;
+	private Timestamp birthDay;
 	private String address;
 	private String emailAddress;
 	private int phoneNumber;
@@ -21,7 +19,7 @@ public class CustomerModel {
 	public CustomerModel() {
 	}
 	
-	public CustomerModel(Integer id, int documentId, String name, GenderEnum gender, Date birthDay, String address, String emailAddress, int phoneNumber, int height, CustomerStatusEnum status) {
+	public CustomerModel(Integer id, int documentId, String name, GenderEnum gender, Timestamp birthDay, String address, String emailAddress, int phoneNumber, int height, CustomerStatusEnum status) {
 		setId(id);
 		setDocumentId(documentId);
 		setName(name);
@@ -34,14 +32,6 @@ public class CustomerModel {
 		setStatus(status);
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public int getDocumentId() {
 		return documentId;
 	}
@@ -66,11 +56,11 @@ public class CustomerModel {
 		this.gender = gender;
 	}
 
-	public Date getBirthDay() {
+	public Timestamp getBirthDay() {
 		return birthDay;
 	}
 
-	public void setBirthDay(Date birthDay) {
+	public void setBirthDay(Timestamp birthDay) {
 		this.birthDay = birthDay;
 	}
 
