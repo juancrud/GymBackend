@@ -1,6 +1,6 @@
 package com.juancrud.gym.api.controllers;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +21,8 @@ public class TrainerController extends BaseController<TrainerModel, Integer> {
 	
 	@GetMapping("/testNew")
 	public TrainerModel testNew() {
-		TrainerModel model = new TrainerModel(null, 112040765, "Gabriela Sanchez", GenderEnum.Female, new Date(1984, 4, 9), null, null, 0, TrainerStatusEnum.Inactive);
-		return trainerService.save(model);
+		TrainerModel model = new TrainerModel(null, 112040765, "Gabriela Sanchez", GenderEnum.Female, new Timestamp(84, 4, 9, 0, 0, 0, 0), null, null, 0, TrainerStatusEnum.Inactive);
+		return trainerService.create(model);
 	}
 	
 }

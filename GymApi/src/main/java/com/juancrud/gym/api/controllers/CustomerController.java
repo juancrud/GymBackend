@@ -1,6 +1,6 @@
 package com.juancrud.gym.api.controllers;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +21,8 @@ public class CustomerController extends BaseController<CustomerModel, Integer> {
 	
 	@GetMapping("/testNew")
 	public CustomerModel testNew() {
-		CustomerModel model = new CustomerModel(null, 901120925, "Juan Carlos Rudin", GenderEnum.Male, new Date(1984, 9, 26), null, null, 0, 172, CustomerStatusEnum.Active);
-		return customerService.save(model);
+		CustomerModel model = new CustomerModel(null, 901120925, "Juan Carlos Rudin", GenderEnum.Male, new Timestamp(84, 8, 26, 0, 0, 0, 0), null, null, 0, 172, CustomerStatusEnum.Active);
+		return customerService.create(model);
 	}
 	
 }

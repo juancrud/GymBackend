@@ -18,6 +18,6 @@ public class MediaController extends BaseController<MediaModel, Integer> {
 	
 	@GetMapping("/testNew")
 	public MediaModel testNew() {
-		return mediaService.save(new MediaModel(null, "TestImage1.png", MediaTypeEnum.Image));
+		return mediaService.create(new MediaModel(null, "TestImage1.png", MediaTypeEnum.Image));
 	}
 }

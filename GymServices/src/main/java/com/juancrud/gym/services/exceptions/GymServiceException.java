@@ -1,17 +1,16 @@
 package com.juancrud.gym.services.exceptions;
 
 @SuppressWarnings("serial")
-public class GymServiceException extends Exception {
+public class GymServiceException extends RuntimeException {
 	
 	private String service;
 	
-	public GymServiceException(String service, String message) {
-		this(service, message, null);
+	public GymServiceException(String message) {
+		this(message, null);
 	}
 	
-	public GymServiceException(String service, String message, Throwable cause) {
+	public GymServiceException(String message, Throwable cause) {
 		super(message, cause);
-		setService(service);
 	}
 
 	public String getService() {

@@ -17,6 +17,6 @@ public class MeasurementController extends BaseController<MeasurementModel, Inte
 	
 	@GetMapping("/testNew")
 	public MeasurementModel testNew() {
-		return measurementService.save(new MeasurementModel(null, "Test Name", "Test description"));
+		return measurementService.create(new MeasurementModel(null, "Test Name", "Test description"));
 	}
 }

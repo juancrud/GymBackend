@@ -1,7 +1,7 @@
 package com.juancrud.gym.api.controllers;
 
+import java.sql.Timestamp;
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +42,6 @@ public class MeasurementItemController extends BaseController<MeasurementItemMod
 			customerModel = cm;
 		}
 		
-		return measurementItemService.save(new MeasurementItemModel(null, new Date(), "Test comment", trainerModel, customerModel));
+		return measurementItemService.create(new MeasurementItemModel(null, new Timestamp(System.currentTimeMillis()), "Test comment", trainerModel, customerModel));
 	}
 }

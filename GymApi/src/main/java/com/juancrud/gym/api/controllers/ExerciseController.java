@@ -30,6 +30,6 @@ public class ExerciseController extends BaseController<ExerciseModel, Integer> {
 			exerciseCategoryModel = ecm;
 		}
 		
-		return exerciseService.save(new ExerciseModel(null, "test name", "test description", exerciseCategoryModel));
+		return exerciseService.create(new ExerciseModel(null, "test name", "test description", exerciseCategoryModel));
 	}
 }

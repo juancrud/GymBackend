@@ -17,6 +17,6 @@ public class DummyController extends BaseController<DummyModel, Integer> {
 	
 	@GetMapping("/testNew")
 	public DummyModel testNew() {
-		return dummyService.save(new DummyModel(null, "Test Name", "Test Description"));
+		return dummyService.create(new DummyModel(null, "Test Name", "Test Description"));
 	}
 }

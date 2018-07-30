@@ -17,7 +17,7 @@ public class ExerciseCategoryController extends BaseController<ExerciseCategoryM
 	
 	@GetMapping("/testNew")
 	public ExerciseCategoryModel testNew() {
-		return exerciseCategoryService.save(new ExerciseCategoryModel(null, "Test Category"));
+		return exerciseCategoryService.create(new ExerciseCategoryModel(null, "Test Category"));
 	}
 	
 }
