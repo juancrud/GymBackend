@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,7 +20,11 @@ public class GymApplicationConfiguration {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedMethods("GET", "POST", "PUT");
+				String get = HttpMethod.GET.toString();
+				String post = HttpMethod.POST.toString();
+				String put = HttpMethod.PUT.toString();
+				String delete = HttpMethod.DELETE.toString();
+				registry.addMapping("/**").allowedMethods(get, post, put, delete);
 			}
 		};
 	}
