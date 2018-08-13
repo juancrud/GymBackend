@@ -1,7 +1,9 @@
 TASKS:
+- Link Media to existing data
+- Soft delete on Measurements and Exercises
+- Revisit column types, Table indexes/constraints
+
 - Add more logic to Controllers (search?q=xxx)
 - Normalize Dates (UTC), Dates on Models
-- Revisit column types, Table indexes/constraints
-- Link Media to existing data
 - Add more Daos, Model, Controllers ?
 - Add some Automapper ???

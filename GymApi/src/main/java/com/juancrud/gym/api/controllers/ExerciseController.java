@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.juancrud.gym.dao.enums.ExerciseStatusEnum;
 import com.juancrud.gym.services.interfaces.IExerciseCategoryService;
 import com.juancrud.gym.services.interfaces.IExerciseService;
 import com.juancrud.gym.services.models.ExerciseCategoryModel;
@@ -30,6 +31,6 @@ public class ExerciseController extends BaseController<ExerciseModel, Integer> {
 			exerciseCategoryModel = ecm;
 		}
 		
-		return exerciseService.create(new ExerciseModel(null, "test name", "test description", exerciseCategoryModel));
+		return exerciseService.create(new ExerciseModel(null, "test name", "test description", ExerciseStatusEnum.Active, exerciseCategoryModel));
 	}
 }

@@ -7,11 +7,19 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.juancrud.gym.dao.enums.ExerciseCategoryStatusEnum;
+
 @Entity
 public class ExerciseCategory extends EntityWithId {
 	
 	@Column (name = "Name")
 	private String name;
+	
+	@Column (name = "Description")
+	private String description;
+	
+	@Column (name = "Status")
+	private ExerciseCategoryStatusEnum status;
 	
 	@OneToMany(mappedBy="exerciseCategory")
 	private Set<Exercise> exercises;
@@ -20,9 +28,11 @@ public class ExerciseCategory extends EntityWithId {
 		setExercises(new HashSet<Exercise>());
 	}
 	
-	public ExerciseCategory(String name) {
+	public ExerciseCategory(String name, String description, ExerciseCategoryStatusEnum status) {
 		this();
 		setName(name);
+		setDescription(description);
+		setStatus(status);
 	}
 	
 	public String getName() {
@@ -31,6 +41,22 @@ public class ExerciseCategory extends EntityWithId {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public ExerciseCategoryStatusEnum getStatus() {
+		return status;
+	}
+
+	public void setStatus(ExerciseCategoryStatusEnum status) {
+		this.status = status;
 	}
 
 	public Set<Exercise> getExercises() {

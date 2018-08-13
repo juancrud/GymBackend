@@ -19,6 +19,7 @@ public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercis
 		exerciseModel.setId(exercise.getId());
 		exerciseModel.setName(exercise.getName());
 		exerciseModel.setDescription(exercise.getDescription());
+		exerciseModel.setStatus(exercise.getStatus());
 		exerciseModel.setExerciseCategory(exerciseCategoryMapper.mapEntityToModel(exercise.getExerciseCategory()));
 		
 		return exerciseModel;
@@ -29,6 +30,7 @@ public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercis
 		exercise.setId(exerciseModel.getId());
 		exercise.setName(exerciseModel.getName());
 		exercise.setDescription(exerciseModel.getDescription());
+		exercise.setStatus(exerciseModel.getStatus());
 		exercise.setExerciseCategory(exerciseCategoryMapper.mapModelToEntity(exerciseModel.getExerciseCategory()));
 		
 		return exercise;

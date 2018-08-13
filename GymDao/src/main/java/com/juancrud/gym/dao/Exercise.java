@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.juancrud.gym.dao.enums.ExerciseStatusEnum;
+
 @Entity
 public class Exercise extends EntityWithId {
 	
@@ -13,6 +15,9 @@ public class Exercise extends EntityWithId {
 	
 	@Column (name = "Description")
 	private String description;
+	
+	@Column (name = "Status")
+	private ExerciseStatusEnum status;
 	
 	@ManyToOne
     @JoinColumn(name="exerciseCategoryId", nullable=true)
@@ -23,13 +28,14 @@ public class Exercise extends EntityWithId {
 	public Exercise() {
 	}
 	
-	public Exercise(String name, String description) {
+	public Exercise(String name, String description, ExerciseStatusEnum status) {
 		setName(name);
 		setDescription(description);
+		setStatus(status);
 	}
 	
-	public Exercise(String name, String description, ExerciseCategory exerciseCategory) {
-		this(name, description);
+	public Exercise(String name, String description, ExerciseStatusEnum status, ExerciseCategory exerciseCategory) {
+		this(name, description, status);
 		setExerciseCategory(exerciseCategory);
 	}
 	
@@ -55,5 +61,13 @@ public class Exercise extends EntityWithId {
 
 	public void setExerciseCategory(ExerciseCategory exerciseCategory) {
 		this.exerciseCategory = exerciseCategory;
+	}
+
+	public ExerciseStatusEnum getStatus() {
+		return status;
+	}
+
+	public void setStatus(ExerciseStatusEnum status) {
+		this.status = status;
 	}
 }

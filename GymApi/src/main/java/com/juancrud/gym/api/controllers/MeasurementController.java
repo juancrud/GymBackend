@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.juancrud.gym.dao.enums.MeasurementStatusEnum;
 import com.juancrud.gym.services.interfaces.IMeasurementService;
 import com.juancrud.gym.services.models.MeasurementModel;
 
@@ -17,6 +18,6 @@ public class MeasurementController extends BaseController<MeasurementModel, Inte
 	
 	@GetMapping("/testNew")
 	public MeasurementModel testNew() {
-		return measurementService.create(new MeasurementModel(null, "Test Name", "Test description"));
+		return measurementService.create(new MeasurementModel(null, "Test Name", "Test description", MeasurementStatusEnum.Active));
 	}
 }

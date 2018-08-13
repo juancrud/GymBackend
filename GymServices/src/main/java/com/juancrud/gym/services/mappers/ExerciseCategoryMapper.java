@@ -12,6 +12,8 @@ public class ExerciseCategoryMapper implements IModelEntityMapper<ExerciseCatego
 		ExerciseCategoryModel exerciseCategoryModel = new ExerciseCategoryModel();
 		exerciseCategoryModel.setId(exerciseCategory.getId());
 		exerciseCategoryModel.setName(exerciseCategory.getName());
+		exerciseCategoryModel.setDescription(exerciseCategory.getDescription());
+		exerciseCategoryModel.setStatus(exerciseCategory.getStatus());
 		
 		return exerciseCategoryModel;
 	}
@@ -20,6 +22,8 @@ public class ExerciseCategoryMapper implements IModelEntityMapper<ExerciseCatego
 		ExerciseCategory exerciseCategory = new ExerciseCategory();
 		exerciseCategory.setId(exerciseCategoryModel.getId());
 		exerciseCategory.setName(exerciseCategoryModel.getName());
+		exerciseCategory.setDescription(exerciseCategoryModel.getDescription());
+		exerciseCategory.setStatus(exerciseCategoryModel.getStatus());
 		
 		return exerciseCategory;
 	}

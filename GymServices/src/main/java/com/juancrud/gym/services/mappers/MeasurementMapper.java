@@ -13,6 +13,7 @@ public class MeasurementMapper implements IModelEntityMapper<MeasurementModel, M
 		measurementModel.setId(measurement.getId());
 		measurementModel.setName(measurement.getName());
 		measurementModel.setDescription(measurement.getDescription());
+		measurementModel.setStatus(measurement.getStatus());
 		
 		return measurementModel;
 	}
@@ -22,6 +23,7 @@ public class MeasurementMapper implements IModelEntityMapper<MeasurementModel, M
 		measurement.setId(measurementModel.getId());
 		measurement.setName(measurementModel.getName());
 		measurement.setDescription(measurementModel.getDescription());
+		measurement.setStatus(measurementModel.getStatus());
 		
 		return measurement;
 	}

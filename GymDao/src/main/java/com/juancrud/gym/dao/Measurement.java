@@ -3,6 +3,8 @@ package com.juancrud.gym.dao;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.juancrud.gym.dao.enums.MeasurementStatusEnum;
+
 @Entity
 public class Measurement extends EntityWithId {
 	
@@ -12,12 +14,16 @@ public class Measurement extends EntityWithId {
 	@Column(name="Description")
 	private String description;
 	
+	@Column (name = "Status")
+	private MeasurementStatusEnum status;
+	
 	public Measurement() {
 	}
 	
-	public Measurement(String name, String description) {
+	public Measurement(String name, String description, MeasurementStatusEnum status) {
 		setName(name);
 		setDescription(description);
+		setStatus(status);
 	}
 
 	public String getName() {
@@ -34,6 +40,14 @@ public class Measurement extends EntityWithId {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public MeasurementStatusEnum getStatus() {
+		return status;
+	}
+
+	public void setStatus(MeasurementStatusEnum status) {
+		this.status = status;
 	}
 	
 }
