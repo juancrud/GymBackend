@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import com.juancrud.gym.dao.enums.MeasurementStatusEnum;
 
 @Entity
-public class Measurement extends EntityWithId {
+public class Measurement extends EntityWithIdAndImage {
 	
 	@Column(name="Name")
 	private String name;

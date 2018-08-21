@@ -13,6 +13,7 @@ public class TrainerModel extends EntityModel<Integer> {
 	private String address;
 	private String emailAddress;
 	private int phoneNumber;
+	private String imageUrl;
 	private TrainerStatusEnum status;
 	
 	public TrainerModel() {
@@ -84,6 +85,14 @@ public class TrainerModel extends EntityModel<Integer> {
 
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	public TrainerStatusEnum getStatus() {

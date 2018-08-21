@@ -4,11 +4,10 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
 import com.juancrud.gym.dao.enums.GenderEnum;
 
 @Entity
-public class Person extends EntityWithId {
+public class Person extends EntityWithIdAndImage {
 
 	@Column (name = "DocumentId")
 	private int documentId;
@@ -21,9 +20,6 @@ public class Person extends EntityWithId {
 	
 	@Column (name = "BirthDay")
 	private Timestamp birthDay;
-	
-//	@Column (name = "Image")
-//	private Object Image;
 	
 	@Column (name = "Address")
 	private String address;

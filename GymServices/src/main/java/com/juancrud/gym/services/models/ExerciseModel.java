@@ -7,6 +7,7 @@ public class ExerciseModel extends EntityModel<Integer> {
 	private String name;
 	private String description;
 	private ExerciseStatusEnum status;
+	private String imageUrl;
 	private ExerciseCategoryModel exerciseCategory;
 	
 	public ExerciseModel() {
@@ -43,6 +44,14 @@ public class ExerciseModel extends EntityModel<Integer> {
 	public void setStatus(ExerciseStatusEnum status) {
 		this.status = status;
 	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
 	public ExerciseCategoryModel getExerciseCategory() {
 		return exerciseCategory;
@@ -51,4 +60,5 @@ public class ExerciseModel extends EntityModel<Integer> {
 	public void setExerciseCategory(ExerciseCategoryModel exerciseCategory) {
 		this.exerciseCategory = exerciseCategory;
 	}
+
 }

@@ -7,6 +7,7 @@ public class MeasurementModel extends EntityModel<Integer> {
 	private String name;
 	private String description;
 	private MeasurementStatusEnum status;
+	private String imageUrl;
 	
 	public MeasurementModel() {
 	}
@@ -40,5 +41,13 @@ public class MeasurementModel extends EntityModel<Integer> {
 
 	public void setStatus(MeasurementStatusEnum status) {
 		this.status = status;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 }

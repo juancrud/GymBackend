@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import com.juancrud.gym.dao.enums.ExerciseCategoryStatusEnum;
 
 @Entity
-public class ExerciseCategory extends EntityWithId {
+public class ExerciseCategory extends EntityWithIdAndImage {
 	
 	@Column (name = "Name")
 	private String name;

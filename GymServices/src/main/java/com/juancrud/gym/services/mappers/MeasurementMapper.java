@@ -15,6 +15,10 @@ public class MeasurementMapper implements IModelEntityMapper<MeasurementModel, M
 		measurementModel.setDescription(measurement.getDescription());
 		measurementModel.setStatus(measurement.getStatus());
 		
+		if (measurement.getImage() != null) {
+			measurementModel.setImageUrl(measurement.getImage().getUrl());
+		}
+		
 		return measurementModel;
 	}
 

@@ -22,6 +22,10 @@ public class CustomerMapper implements IModelEntityMapper<CustomerModel, Custome
 		customerModel.setHeight(customer.getHeight());
 		customerModel.setStatus(customer.getStatus());
 		
+		if (customer.getPerson().getImage() != null) {
+			customerModel.setImageUrl(customer.getPerson().getImage().getUrl());
+		}
+		
 		return customerModel;
 	}
 

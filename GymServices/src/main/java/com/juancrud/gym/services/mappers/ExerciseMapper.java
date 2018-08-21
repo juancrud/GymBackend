@@ -22,6 +22,10 @@ public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercis
 		exerciseModel.setStatus(exercise.getStatus());
 		exerciseModel.setExerciseCategory(exerciseCategoryMapper.mapEntityToModel(exercise.getExerciseCategory()));
 		
+		if (exercise.getImage() != null) {
+			exerciseModel.setImageUrl(exercise.getImage().getUrl());
+		}
+		
 		return exerciseModel;
 	}
 

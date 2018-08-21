@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import com.juancrud.gym.dao.enums.ExerciseStatusEnum;
 
 @Entity
-public class Exercise extends EntityWithId {
+public class Exercise extends EntityWithIdAndImage {
 	
 	@Column (name = "Name")
 	private String name;

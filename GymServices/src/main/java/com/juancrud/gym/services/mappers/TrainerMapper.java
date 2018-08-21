@@ -21,6 +21,10 @@ public class TrainerMapper implements IModelEntityMapper<TrainerModel, Trainer> 
 		trainerModel.setPhoneNumber(trainer.getPerson().getPhoneNumber());
 		trainerModel.setStatus(trainer.getStatus());
 		
+		if (trainer.getPerson().getImage() != null) {
+			trainerModel.setImageUrl(trainer.getPerson().getImage().getUrl());
+		}
+		
 		return trainerModel;
 	}
 

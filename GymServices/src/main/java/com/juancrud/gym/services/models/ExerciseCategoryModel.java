@@ -5,10 +5,9 @@ import com.juancrud.gym.dao.enums.ExerciseCategoryStatusEnum;
 public class ExerciseCategoryModel extends EntityModel<Integer> {
 	
 	private String name;
-	
 	private String description;
-	
 	private ExerciseCategoryStatusEnum status;
+	private String imageUrl;
 	
 	public ExerciseCategoryModel() {
 	}
@@ -42,6 +41,14 @@ public class ExerciseCategoryModel extends EntityModel<Integer> {
 
 	public void setStatus(ExerciseCategoryStatusEnum status) {
 		this.status = status;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 }

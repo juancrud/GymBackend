@@ -13,6 +13,7 @@ public class CustomerModel extends EntityModel<Integer> {
 	private String address;
 	private String emailAddress;
 	private int phoneNumber;
+	private String imageUrl;
 	private int height;
 	private CustomerStatusEnum status;
 	
@@ -86,6 +87,14 @@ public class CustomerModel extends EntityModel<Integer> {
 
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	public int getHeight() {
