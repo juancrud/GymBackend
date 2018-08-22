@@ -9,6 +9,8 @@ DELETE FROM Customer;
 DELETE FROM Trainer;
 DELETE FROM Person;
 DELETE FROM Media;
+DELETE FROM Exercise;
+DELETE FROM ExerciseCategory;
 
 
 -- Reset sequences
@@ -16,6 +18,9 @@ ALTER SEQUENCE Media_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Person_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Customer_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Trainer_Id_Seq RESTART WITH 1;
+ALTER SEQUENCE Exercise_Id_Seq RESTART WITH 1;
+ALTER SEQUENCE ExerciseCategory_Id_Seq RESTART WITH 1;
+
 
 -- Media
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person1.jpg');
@@ -114,3 +119,46 @@ VALUES (12, 2);
 
 INSERT INTO Trainer(PersonId, Status)
 VALUES (13, 0);
+
+
+-- Exercise Category
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Cardio', 'Improves cardio', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 1', 'Description 1', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 2', 'Description 2', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 3', 'Description 3', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 4', 'Description 4', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 5', 'Description 5', 0, null)
+
+INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
+VALUES ('Category 6', 'Description 6', 0, null)
+
+
+-- Exercise
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Bicycle', null, 0, 1, null)
+
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Running', null, 0, 1, null)
+
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Elliptical', null, 0, 1, null)
+
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Stair Climber', null, 0, 1, null)
+
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Swimming', null, 0, 1, null)
+
+INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
+VALUES ('Rowing', null, 0, 1, null)

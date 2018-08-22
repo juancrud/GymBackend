@@ -1,8 +1,5 @@
 TASKS:
-- Link Media to existing data
 - Revisit column types, Table indexes/constraints
-
+- How to save images, where to store them?
 - Add more logic to Controllers (search?q=xxx)
 - Normalize Dates (UTC), Dates on Models
-- Add more Daos, Model, Controllers ?
-- Add some Automapper ???
