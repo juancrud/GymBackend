@@ -1,5 +1,5 @@
 TASKS:
 - How to save images, where to store them?
-- Revisit column types
 - Add more logic to Controllers (search?q=xxx)
+- Revisit column types
 - Normalize Dates (UTC), Dates on Models
