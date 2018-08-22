@@ -123,42 +123,42 @@ VALUES (13, 0);
 
 -- Exercise Category
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Cardio', 'Improves cardio', 0, null)
+VALUES ('Cardio', 'Improves cardio', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 1', 'Description 1', 0, null)
+VALUES ('Category 1', 'Description 1', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 2', 'Description 2', 0, null)
+VALUES ('Category 2', 'Description 2', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 3', 'Description 3', 0, null)
+VALUES ('Category 3', 'Description 3', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 4', 'Description 4', 0, null)
+VALUES ('Category 4', 'Description 4', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 5', 'Description 5', 0, null)
+VALUES ('Category 5', 'Description 5', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 6', 'Description 6', 0, null)
+VALUES ('Category 6', 'Description 6', 0, null);
 
 
 -- Exercise
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Bicycle', null, 0, 1, null)
+VALUES ('Bicycle', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Running', null, 0, 1, null)
+VALUES ('Running', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Elliptical', null, 0, 1, null)
+VALUES ('Elliptical', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Stair Climber', null, 0, 1, null)
+VALUES ('Stair Climber', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Swimming', null, 0, 1, null)
+VALUES ('Swimming', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
-VALUES ('Rowing', null, 0, 1, null)
+VALUES ('Rowing', null, 0, 1, null);
