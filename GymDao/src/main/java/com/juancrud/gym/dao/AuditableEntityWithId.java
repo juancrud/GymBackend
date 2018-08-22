@@ -11,11 +11,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 @MappedSuperclass
 public abstract class AuditableEntityWithId extends EntityWithId {
 
-	@Column (name="DateCreated")
+	@Column (name="DateCreated", nullable = false)
 	@CreationTimestamp
 	private Timestamp dateCreated;
 	
-	@Column (name="DateUpdated")
+	@Column (name="DateUpdated", nullable = false)
 	@UpdateTimestamp
 	private Timestamp dateUpdated; 
 

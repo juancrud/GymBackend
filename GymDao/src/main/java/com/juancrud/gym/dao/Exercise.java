@@ -20,7 +20,7 @@ public class Exercise extends EntityWithIdAndImage {
 	private ExerciseStatusEnum status;
 	
 	@ManyToOne
-    @JoinColumn(name="exerciseCategoryId", nullable=true)
+    @JoinColumn(name="exerciseCategoryId", nullable = true)
 	private ExerciseCategory exerciseCategory;
 	
 	//private IList<ExerciseMedia> ExerciseMedias { get; set; }
