@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 @MappedSuperclass
 public abstract class EntityWithIdAndImage extends EntityWithId {
 
-	@JoinColumn(name="MediaId")
+	@JoinColumn(name="MediaId", nullable = true)
 	@OneToOne (cascade = CascadeType.ALL)
 	private Media image;
 

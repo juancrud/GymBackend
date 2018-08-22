@@ -16,10 +16,10 @@ import com.juancrud.gym.dao.enums.TrainerStatusEnum;
 public class Trainer extends EntityWithId {
 
 	@OneToOne(cascade= {CascadeType.ALL})
-	@JoinColumn(name = "personId")
+	@JoinColumn(name = "personId", nullable = false)
 	private Person person;
 	
-	@Column (name = "Status")
+	@Column (name = "Status", nullable = false)
 	private TrainerStatusEnum status;
 	
 	@OneToMany(mappedBy="trainer")

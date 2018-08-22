@@ -10,21 +10,21 @@ import javax.persistence.OneToOne;
 @Entity
 public class Routine extends EntityWithId {
 
-	@Column(name="Date")
+	@Column(name="Date", nullable = false)
 	private Timestamp date;
 	
-	@Column(name="Objectives")
+	@Column(name="Objectives", nullable = false)
 	private String objectives;
 	
-	@Column(name="Comments")
+	@Column(name="Comments", nullable = true)
 	private String comments;
 	
 	@ManyToOne
-	@JoinColumn(name = "TrainerId")
+	@JoinColumn(name = "TrainerId", nullable = false)
 	private Trainer trainer;
 	
 	@ManyToOne
-	@JoinColumn(name = "CustomerId")
+	@JoinColumn(name = "CustomerId", nullable = false)
 	private Customer customer;
 	
 	@OneToOne(mappedBy="routine")

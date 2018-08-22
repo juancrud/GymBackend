@@ -9,25 +9,25 @@ import com.juancrud.gym.dao.enums.GenderEnum;
 @Entity
 public class Person extends EntityWithIdAndImage {
 
-	@Column (name = "DocumentId")
+	@Column (name = "DocumentId", nullable = false)
 	private int documentId;
 	
-	@Column (name = "Name")
+	@Column (name = "Name", nullable = false)
 	private String name;
 	
-	@Column (name = "Gender")
+	@Column (name = "Gender", nullable = false)
 	private GenderEnum gender;
 	
-	@Column (name = "BirthDay")
+	@Column (name = "BirthDay", nullable = false)
 	private Timestamp birthDay;
 	
-	@Column (name = "Address")
+	@Column (name = "Address", nullable = true)
 	private String address;
 	
-	@Column (name = "EmailAddress")
+	@Column (name = "EmailAddress", nullable = true)
 	private String emailAddress;
 	
-	@Column (name = "PhoneNumber")
+	@Column (name = "PhoneNumber", nullable = true)
 	private int phoneNumber;
 	
 	public Person() {

@@ -12,13 +12,13 @@ import com.juancrud.gym.dao.enums.ExerciseCategoryStatusEnum;
 @Entity
 public class ExerciseCategory extends EntityWithIdAndImage {
 	
-	@Column (name = "Name")
+	@Column (name = "Name", nullable = false)
 	private String name;
 	
-	@Column (name = "Description")
+	@Column (name = "Description", nullable = true)
 	private String description;
 	
-	@Column (name = "Status")
+	@Column (name = "Status", nullable = false)
 	private ExerciseCategoryStatusEnum status;
 	
 	@OneToMany(mappedBy="exerciseCategory")

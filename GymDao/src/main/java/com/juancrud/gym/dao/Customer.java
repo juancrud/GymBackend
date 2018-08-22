@@ -16,13 +16,13 @@ import com.juancrud.gym.dao.enums.CustomerStatusEnum;
 public class Customer extends EntityWithId {
 	
 	@OneToOne(cascade= {CascadeType.ALL})
-	@JoinColumn(name = "personId")
+	@JoinColumn(name = "personId", nullable = false)
 	private Person person;
 	
-	@Column (name = "Height")
+	@Column (name = "Height", nullable = false)
 	private int height;
 
-	@Column (name = "Status")
+	@Column (name = "Status", nullable = false)
 	private CustomerStatusEnum status;
 	
 	@OneToMany(mappedBy="customer")

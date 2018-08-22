@@ -14,25 +14,25 @@ import javax.persistence.OneToOne;
 @Entity
 public class MeasurementItem extends EntityWithId {
 
-	@Column(name="Date")
+	@Column(name="Date", nullable = false)
 	private Timestamp date;
 	
-	@Column(name="Comments")
+	@Column(name="Comments", nullable = true)
 	private String comments;
 	
 	@ManyToOne
-	@JoinColumn(name = "TrainerId")
+	@JoinColumn(name = "TrainerId", nullable = false)
 	private Trainer trainer;
 	
 	@ManyToOne
-	@JoinColumn(name = "CustomerId")
+	@JoinColumn(name = "CustomerId", nullable = false)
 	private Customer customer;
 	
 	@OneToMany(mappedBy="measurementItem")
 	private Set<MeasurementItemLine> measurementItemLines;
 	
 	@OneToOne
-	@JoinColumn(name = "RoutineId")
+	@JoinColumn(name = "RoutineId", nullable = true)
 	private Routine routine;
 	
 	public MeasurementItem() {

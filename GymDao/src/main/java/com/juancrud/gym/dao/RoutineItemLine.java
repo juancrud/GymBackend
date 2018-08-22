@@ -9,30 +9,30 @@ import javax.persistence.OneToOne;
 @Entity
 public class RoutineItemLine extends EntityWithId {
 	
-	@Column(name="Series")
+	@Column(name="Series", nullable = true)
 	private Integer series;
 	
-	@Column(name="Repetitions")
+	@Column(name="Repetitions", nullable = true)
 	private Integer repetitions;
 	
-	@Column(name="RestTime")
+	@Column(name="RestTime", nullable = true)
 	private Integer restTime;
 	
-	@Column(name="Weight")
+	@Column(name="Weight", nullable = true)
 	private Integer weight;
 	
-	@Column(name="Duration")
+	@Column(name="Duration", nullable = true)
 	private Integer duration;
 	
-	@Column(name="Comments")
+	@Column(name="Comments", nullable = true)
 	private String comments;
 	
 	@OneToOne
-	@JoinColumn(name = "ExerciseId")
+	@JoinColumn(name = "ExerciseId", nullable = false)
 	private Exercise exercise;
 	
 	@ManyToOne
-	@JoinColumn(name = "RoutineItemId")
+	@JoinColumn(name = "RoutineItemId", nullable = false)
 	private RoutineItem routineItem;
 	
 	public RoutineItemLine() {

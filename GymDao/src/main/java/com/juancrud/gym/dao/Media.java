@@ -8,10 +8,10 @@ import com.juancrud.gym.dao.enums.MediaTypeEnum;
 @Entity
 public class Media extends EntityWithId {
 
-	@Column (name = "Url")
+	@Column (name = "Url", nullable = false)
 	private String url;
 	
-	@Column (name = "Type")
+	@Column (name = "Type", nullable = false)
 	private MediaTypeEnum type;
 	
 	public Media() {

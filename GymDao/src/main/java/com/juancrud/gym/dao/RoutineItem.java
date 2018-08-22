@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class RoutineItem extends EntityWithId {
 	
-	@Column(name="Comments")
+	@Column(name="Comments", nullable = true)
 	private String comments;
 	
 	@OneToMany(mappedBy="routineItem")
