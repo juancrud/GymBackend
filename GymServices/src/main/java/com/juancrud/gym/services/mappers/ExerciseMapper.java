@@ -11,8 +11,8 @@ import com.juancrud.gym.services.models.ExerciseModel;
 @Component
 public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercise> {
 	
-	@Autowired
-	private IModelEntityMapper<ExerciseCategoryModel, ExerciseCategory> exerciseCategoryMapper;
+	//@Autowired
+	//private IModelEntityMapper<ExerciseCategoryModel, ExerciseCategory> exerciseCategoryMapper;
 
 	public ExerciseModel mapEntityToModel(Exercise exercise) {
 		ExerciseModel exerciseModel = new ExerciseModel();
@@ -20,7 +20,7 @@ public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercis
 		exerciseModel.setName(exercise.getName());
 		exerciseModel.setDescription(exercise.getDescription());
 		exerciseModel.setStatus(exercise.getStatus());
-		exerciseModel.setExerciseCategory(exerciseCategoryMapper.mapEntityToModel(exercise.getExerciseCategory()));
+		//exerciseModel.setExerciseCategory(exerciseCategoryMapper.mapEntityToModel(exercise.getExerciseCategory()));
 		
 		if (exercise.getImage() != null) {
 			exerciseModel.setImageUrl(exercise.getImage().getUrl());
@@ -35,7 +35,7 @@ public class ExerciseMapper implements IModelEntityMapper<ExerciseModel, Exercis
 		exercise.setName(exerciseModel.getName());
 		exercise.setDescription(exerciseModel.getDescription());
 		exercise.setStatus(exerciseModel.getStatus());
-		exercise.setExerciseCategory(exerciseCategoryMapper.mapModelToEntity(exerciseModel.getExerciseCategory()));
+		//exercise.setExerciseCategory(exerciseCategoryMapper.mapModelToEntity(exerciseModel.getExerciseCategory()));
 		
 		return exercise;
 	}

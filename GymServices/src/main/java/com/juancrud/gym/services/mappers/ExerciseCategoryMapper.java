@@ -1,12 +1,21 @@
 package com.juancrud.gym.services.mappers;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.juancrud.gym.dao.Exercise;
 import com.juancrud.gym.dao.ExerciseCategory;
 import com.juancrud.gym.services.models.ExerciseCategoryModel;
+import com.juancrud.gym.services.models.ExerciseModel;
 
 @Component
 public class ExerciseCategoryMapper implements IModelEntityMapper<ExerciseCategoryModel, ExerciseCategory> {
+	
+	@Autowired
+	private ExerciseMapper exerciseMapper;
 
 	public ExerciseCategoryModel mapEntityToModel(ExerciseCategory exerciseCategory) {
 		ExerciseCategoryModel exerciseCategoryModel = new ExerciseCategoryModel();
@@ -18,6 +27,12 @@ public class ExerciseCategoryMapper implements IModelEntityMapper<ExerciseCatego
 		if (exerciseCategory.getImage() != null) {
 			exerciseCategoryModel.setImageUrl(exerciseCategory.getImage().getUrl());
 		}
+		
+		List<ExerciseModel> exercises = new ArrayList<ExerciseModel>();
+		for(Exercise exercise : exerciseCategory.getExercises()) {
+			exercises.add(exerciseMapper.mapEntityToModel(exercise));
+		}
+		exerciseCategoryModel.setExercises(exercises);
 		
 		return exerciseCategoryModel;
 	}

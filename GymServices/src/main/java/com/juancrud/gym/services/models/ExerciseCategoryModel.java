@@ -1,5 +1,7 @@
 package com.juancrud.gym.services.models;
 
+import java.util.List;
+
 import com.juancrud.gym.dao.enums.ExerciseCategoryStatusEnum;
 
 public class ExerciseCategoryModel extends EntityModel<Integer> {
@@ -8,6 +10,7 @@ public class ExerciseCategoryModel extends EntityModel<Integer> {
 	private String description;
 	private ExerciseCategoryStatusEnum status;
 	private String imageUrl;
+	private List<ExerciseModel> exercises;
 	
 	public ExerciseCategoryModel() {
 	}
@@ -49,6 +52,14 @@ public class ExerciseCategoryModel extends EntityModel<Integer> {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public List<ExerciseModel> getExercises() {
+		return exercises;
+	}
+
+	public void setExercises(List<ExerciseModel> exercises) {
+		this.exercises = exercises;
 	}
 
 }

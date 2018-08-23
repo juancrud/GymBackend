@@ -167,32 +167,32 @@ VALUES ('Rowing', null, 0, 1, null);
 
 
 -- Measurement
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Neck', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Neck', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Chest', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Chest', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Hip', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Hip', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Waist', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Waist', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Right Forearm', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Right Forearm', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Left Forearm', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Left Forearm', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Right Biceps', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Right Biceps', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Left Biceps', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Left Biceps', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Right Femur', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Right Femur', null, 0, null);
 
-INSERT INTO Measurement(Name, Description, Status)
-VALUES ('Left Femur', null, 0);
+INSERT INTO Measurement(Name, Description, Status, MediaId)
+VALUES ('Left Femur', null, 0, null);
