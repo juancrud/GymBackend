@@ -2,4 +2,6 @@ TASKS:
 - How to save images, where to store them?
 - Add more logic to Controllers (search?q=xxx)
 - Revisit column types
-- complete data.sql
+- add more info to complete data.sql
+
+- Git Branching

@@ -11,6 +11,7 @@ DELETE FROM Person;
 DELETE FROM Media;
 DELETE FROM Exercise;
 DELETE FROM ExerciseCategory;
+DELETE FROM Measurement;
 
 
 -- Reset sequences
@@ -20,6 +21,7 @@ ALTER SEQUENCE Customer_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Trainer_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Exercise_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE ExerciseCategory_Id_Seq RESTART WITH 1;
+ALTER SEQUENCE Measurement_Id_Seq RESTART WITH 1;
 
 
 -- Media
@@ -162,3 +164,35 @@ VALUES ('Swimming', null, 0, 1, null);
 
 INSERT INTO Exercise(Name, Description, Status, ExerciseCategoryId, MediaId)
 VALUES ('Rowing', null, 0, 1, null);
+
+
+-- Measurement
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Neck', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Chest', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Hip', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Waist', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Right Forearm', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Left Forearm', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Right Biceps', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Left Biceps', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Right Femur', null, 0);
+
+INSERT INTO Measurement(Name, Description, Status)
+VALUES ('Left Femur', null, 0);
