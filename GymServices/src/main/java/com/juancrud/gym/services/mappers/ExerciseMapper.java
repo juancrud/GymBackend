@@ -1,11 +1,8 @@
 package com.juancrud.gym.services.mappers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.juancrud.gym.dao.Exercise;
-import com.juancrud.gym.dao.ExerciseCategory;
-import com.juancrud.gym.services.models.ExerciseCategoryModel;
 import com.juancrud.gym.services.models.ExerciseModel;
 
 @Component

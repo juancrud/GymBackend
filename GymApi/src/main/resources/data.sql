@@ -38,6 +38,10 @@ INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person10.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person11.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person12.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person13.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_cardio.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_flexibility.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_power.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_strenth.jpg');
 
 -- People
 INSERT INTO Person(DocumentId, Name, Gender, BirthDay, Address, EmailAddress, PhoneNumber, MediaId)
@@ -125,16 +129,16 @@ VALUES (13, 0);
 
 -- Exercise Category
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Cardio', 'Improves cardio', 0, null);
+VALUES ('Cardio', 'Improves cardio', 0, 14);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 1', 'Description 1', 0, null);
+VALUES ('Flexibility', 'Description 1', 0, 15);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 2', 'Description 2', 0, null);
+VALUES ('Power', 'Description 2', 0, 16);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 3', 'Description 3', 0, null);
+VALUES ('Strenth', 'Description 3', 0, 17);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
 VALUES ('Category 4', 'Description 4', 0, null);
