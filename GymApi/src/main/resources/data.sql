@@ -8,10 +8,10 @@
 DELETE FROM Customer;
 DELETE FROM Trainer;
 DELETE FROM Person;
-DELETE FROM Media;
 DELETE FROM Exercise;
 DELETE FROM ExerciseCategory;
 DELETE FROM Measurement;
+DELETE FROM Media;
 
 
 -- Reset sequences
