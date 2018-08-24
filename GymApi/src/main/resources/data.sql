@@ -129,25 +129,25 @@ VALUES (13, 0);
 
 -- Exercise Category
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Cardio', 'Improves cardio', 0, 14);
+VALUES ('Cardio', 'Physical exercise of low to high intensity that depends primarily on the aerobic energy-generating process', 0, 14);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Flexibility', 'Description 1', 0, 15);
+VALUES ('Flexibility', 'Stretching exercises that form a fundamental part of any exercise program', 0, 15);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Power', 'Description 2', 0, 16);
+VALUES ('Power', 'Blah blah blah', 0, 16);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Strenth', 'Description 3', 0, 17);
+VALUES ('Strenth', 'Physical exercises specializing in the use of resistance to induce muscular contraction', 0, 17);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 4', 'Description 4', 0, null);
+VALUES ('TestCategory 1', 'Test Description 1', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 5', 'Description 5', 0, null);
+VALUES ('TestCategory 2', 'Test Description 2', 0, null);
 
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
-VALUES ('Category 6', 'Description 6', 0, null);
+VALUES ('TestCategory 3', 'Test Description 3', 0, null);
 
 
 -- Exercise
