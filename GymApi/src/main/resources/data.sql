@@ -38,10 +38,20 @@ INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person10.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person11.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person12.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/person13.jpg');
+
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_cardio.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_flexibility.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_power.jpg');
 INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/cat_strenth.jpg');
+
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_neck.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_hip.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_waist.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_right_biceps.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_left_biceps.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_right_femur.jpg');
+INSERT INTO Media(Type, Url) VALUES (1, 'assets/images/msm_left_femur.jpg');
+
 
 -- People
 INSERT INTO Person(DocumentId, Name, Gender, BirthDay, Address, EmailAddress, PhoneNumber, MediaId)
@@ -172,16 +182,16 @@ VALUES ('Rowing', null, 0, 1, null);
 
 -- Measurement
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Neck', null, 0, null);
+VALUES ('Neck', null, 0, 18);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
 VALUES ('Chest', null, 0, null);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Hip', null, 0, null);
+VALUES ('Hip', null, 0, 19);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Waist', null, 0, null);
+VALUES ('Waist', null, 0, 20);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
 VALUES ('Right Forearm', null, 0, null);
@@ -190,13 +200,13 @@ INSERT INTO Measurement(Name, Description, Status, MediaId)
 VALUES ('Left Forearm', null, 0, null);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Right Biceps', null, 0, null);
+VALUES ('Right Biceps', null, 0, 21);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Left Biceps', null, 0, null);
+VALUES ('Left Biceps', null, 0, 22);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Right Femur', null, 0, null);
+VALUES ('Right Femur', null, 0, 23);
 
 INSERT INTO Measurement(Name, Description, Status, MediaId)
-VALUES ('Left Femur', null, 0, null);
+VALUES ('Left Femur', null, 0, 24);
