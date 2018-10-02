@@ -4,4 +4,8 @@ TASKS:
 - Revisit column types
 - add more info to complete data.sql
 
+BUGS: 
+- se borra la imagen al salvar datos en customers (o en otros tb)
+
+
 - Git Branching
