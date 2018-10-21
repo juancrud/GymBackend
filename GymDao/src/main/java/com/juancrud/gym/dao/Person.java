@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
 import com.juancrud.gym.dao.enums.GenderEnum;
 
 @Entity
@@ -29,6 +31,9 @@ public class Person extends EntityWithIdAndImage {
 	
 	@Column (name = "PhoneNumber", nullable = true)
 	private int phoneNumber;
+	
+	@OneToOne(mappedBy="person")
+	private User user;
 	
 	public Person() {
 	}

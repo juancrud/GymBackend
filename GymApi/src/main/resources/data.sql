@@ -5,6 +5,7 @@
  */
 
 -- Blow up all data
+DELETE FROM Users;
 DELETE FROM Customer;
 DELETE FROM Trainer;
 DELETE FROM Person;
@@ -19,6 +20,7 @@ ALTER SEQUENCE Media_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Person_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Customer_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Trainer_Id_Seq RESTART WITH 1;
+ALTER SEQUENCE Users_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Exercise_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE ExerciseCategory_Id_Seq RESTART WITH 1;
 ALTER SEQUENCE Measurement_Id_Seq RESTART WITH 1;
@@ -135,6 +137,14 @@ VALUES (12, 2);
 
 INSERT INTO Trainer(PersonId, Status)
 VALUES (13, 0);
+
+
+-- Users
+INSERT INTO Users(IdentityId, Type, PersonId)
+VALUES ('google-oauth2|118418701597387882913', 0, null);
+
+INSERT INTO Users(IdentityId, Type, PersonId)
+VALUES ('google-oauth2|111051132364496930039', 1, 7);
 
 
 -- Exercise Category
