@@ -146,6 +146,15 @@ VALUES ('google-oauth2|118418701597387882913', 0, null);
 INSERT INTO Users(IdentityId, Type, PersonId)
 VALUES ('google-oauth2|111051132364496930039', 1, 7);
 
+INSERT INTO Users(IdentityId, Type, PersonId)
+VALUES ('auth0|5bce35024c25765e8dc78f34', 0, null);
+
+INSERT INTO Users(IdentityId, Type, PersonId)
+VALUES ('auth0|5bce3526c7d2f35b924075df', 1, 8);
+
+INSERT INTO Users(IdentityId, Type, PersonId)
+VALUES ('auth0|5bce353df5129b3189fa07aa', 2, 1);
+
 
 -- Exercise Category
 INSERT INTO ExerciseCategory(Name, Description, Status, MediaId)
