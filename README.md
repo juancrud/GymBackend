@@ -8,7 +8,7 @@ To run this project follow the following steps:
 1. Download & Install Java 1.8.x
 2. Download & Install Maven 3.5.x
 3. Download and Run Eclipse (Oxygen)
-4. Install Eclipse Plugin: STS (Sprint Tool Suite)
+4. Install Eclipse Plugin: STS (Spring Tool Suite)
 5. 
 
 
